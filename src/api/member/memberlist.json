@@ -1,0 +1,32 @@
+[{
+
+    "teamdeatils": {
+      "teamName": "Bigweb",
+      "memberdetails": {
+        "memberName": ["abc", "cdf"]
+
+      }
+    }
+
+  },
+  {
+
+    "teamdeatils": {
+      "teamName": "Mobweb",
+      "memberdetails": {
+        "memberName": ["abc", "fhj"]
+
+      }
+    }
+  },
+  {
+
+    "teamdeatils": {
+      "teamName": "Fnatic",
+      "memberdetails": {
+        "memberName": ["hhklkmk", "fjhjj"]
+
+      }
+    }
+  }
+]

@@ -1,0 +1,30 @@
+<html>
+<div>
+  Hi from member component
+</div>
+<label> Select Sprint No.</label> 
+<div class=" form-group">
+  <select class="form-control">
+    <option *ngFor='let sprint of sprintNo' [value]="sprintno">{{sprint.sprintno}}</option>
+  </select>
+</div>
+<label> Select Team</label> 
+<div class=" form-group">
+  <select class="form-control">
+    <option *ngFor="let member of members" [value]="member.teamdeatils.teamName">
+      <br>{{member.teamdeatils.teamName}}</option>
+  </select>
+</div>
+<label> Select TeamMember</label> 
+<div class=" form-group">
+  <select class="form-control">
+    <option *ngFor="let member of members" [value]="member.teamdeatils.memberdetails.memberName ">{{member.teamdeatils.memberdetails.memberName }}</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="comment"><strong>Comment:</strong></label>
+  <textarea class="form-control"  rows="5" id="comment"></textarea>
+</div>
+<button type="submit" class="btn btn-success" (click)='onbuttonclick()'>Vote</button>
+
+</html>
