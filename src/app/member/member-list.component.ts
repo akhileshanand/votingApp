@@ -47,7 +47,7 @@ export class MemberListComponent {
        // this.memberName = this.members.teamdeatils.memberdetails.memberName;
 
     }
-    public filterChange(filter: any): void {
+    public filterChange(filter: any): void { // [ts] Property 'teamdeatils' does not exist on type 'RootObject[]'.
        this.memberName =this.members.teamdeatils.memberdetails.memberName.filter((s) => s.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
         console.log(this.memberName);
     }
