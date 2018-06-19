@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Rx";
 import {HttpClient,HttpErrorResponse} from '@angular/common/http';
 import 'rxjs/add/operator/do';
+import {RootObject} from './json.model';
 // import 'rxjs/add/operator/catch ';
 // import {kjhihui} from '../../api/fhjt.component';
 
@@ -13,8 +14,8 @@ export class MemberListService {
         
         
     }
-getMemberList():Observable<any>{
-    return this._http.get<any>(this._url)
+getMemberList():Observable<RootObject[]>{
+    return this._http.get<RootObject[]>(this._url)
    // .do(data=>console.log(JSON.stringify(data))) ;
    .do(data=>console.log(JSON.stringify(data)))
     .catch(this.errorHandler)

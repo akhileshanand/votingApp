@@ -2,29 +2,60 @@
 <div>
   Hi from member component
 </div>
-<label> Select Sprint No.</label> 
-<div class=" form-group">
-  <select class="form-control">
-    <option *ngFor='let sprint of sprintNo' [value]="sprintno">{{sprint.sprintno}}</option>
-  </select>
-</div>
-<label> Select Team</label> 
-<div class=" form-group">
-  <select class="form-control">
-    <option *ngFor="let member of members" [value]="member.teamdeatils.teamName">
-      <br>{{member.teamdeatils.teamName}}</option>
-  </select>
-</div>
-<label> Select TeamMember</label> 
-<div class=" form-group">
-  <select class="form-control">
-    <option *ngFor="let member of members" [value]="member.teamdeatils.memberdetails.memberName ">{{member.teamdeatils.memberdetails.memberName }}</option>
-  </select>
-</div>
-<div class="form-group">
-  <label for="comment"><strong>Comment:</strong></label>
-  <textarea class="form-control"  rows="5" id="comment"></textarea>
-</div>
-<button type="submit" class="btn btn-success" (click)='onbuttonclick()'>Vote</button>
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  <label> Select Sprint No.</label>
+  <div class=" form-group">
+    <select class="form-control" [(ngModel)]="model.sprintNo" name="power">
+      <option *ngFor='let sprint of sprintNo' [value]="sprintno">{{sprint.sprintno}}</option>
+    </select>
+    <div [hidden]="sprintNo.valid || sprintNo.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+  </div>
+  <label> Select Team</label>
+  <div class=" form-group">
+    <select class="form-control" [(ngModel)]="model.teamName" name="teamName">
+      <option *ngFor="let teamName of teamNames" [value]="teamNames">
+        <br>{{teamName.name}}</option>
+    </select>
+  </div>
+  <div>
+    <label> Select TeamMember</label>
+    <select class="form-control" [(ngModel)]="model.memberName" name="memberName">
+      <option *ngFor="let bigwebName of bigwebNames">{{ bigwebName.name}}</option>
+      <option *ngFor="let mobwebName of mobwebNames">{{ mobwebName.name}}</option>
+      <option *ngFor="let fnaticName of fnaticNames">{{ fnaticName.name}}</option> 
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="comment">
+      <strong>Comment:</strong>
+    </label>
+    <textarea class="form-control" rows="5" id="comment" [(ngModel)]="model.comment" name="comment"></textarea>
+    <div [hidden]="comment.valid || comment.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+  </div>
+  <button type="submit" class="btn btn-success" (click)='onbuttonclick()'>Vote</button>
+</form>
+<!-- <div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">Name</div>
+    <div class="col-xs-9  pull-left">{{ model.sprintNo }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Alter Ego</div>
+    <div class="col-xs-9 pull-left">{{ model.teamName }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Power</div>
+    <div class="col-xs-9 pull-left">{{ model.memberName }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div> -->
 
 </html>

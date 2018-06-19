@@ -1,12 +1,8 @@
 export interface Memberdetail {
-	memberName: string[];
-}
-
-export interface Teamdeatil {
-	teamName: string;
-	memberdetails: Memberdetail;
+	name: string;
 }
 
 export interface RootObject {
-	teamdeatils: Teamdeatil;
+	teamDetails: string;
+	memberdetails: Memberdetail[];
 }
