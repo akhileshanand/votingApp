@@ -54,20 +54,9 @@ export class MemberListComponent {
     }
 
     ngOnInit() {
-        //     this._memberlistService.getMemberList().subscribe(data => {
-        //         this.members = data;
-        //         console.log(this.members);
-        //     },
-        //         error => this.error = <any>error
-        //     );
-        //    // console.log(this.members.memberdetails[0]);
-        //     // this.filterChange(this.members);
-        //     for (let name in this.members) {
-        //         name = this.members.memberdetails.name;
-        //         console.log(name);
-        //     }
+
     }
-    model = new member();
+    model = new member(this.bigwebNames[0], 'abc', this.sprintNo[3], this.teamNames[0]);
 
     onbuttonclick() {
         const SucessMsg: string = 'Thanks for voting';
