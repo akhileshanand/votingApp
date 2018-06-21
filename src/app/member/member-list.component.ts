@@ -4,6 +4,7 @@ import { RootObject } from './json.model';
 // import { Teamdetails } from './json.model';
 import { Memberdetail } from './json.model';
 import { member } from '../models/member';
+import { INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS } from "@angular/platform-browser-dynamic/src/platform_providers";
 
 @Component({
     selector: 'member-list',
@@ -54,17 +55,29 @@ export class MemberListComponent {
     }
 
     ngOnInit() {
+        
 
     }
-    model = new member(this.bigwebNames[0], 'abc', this.sprintNo[3], this.teamNames[0]);
+    model = new member('abc', 'your Comment', 1, 'Pheonix');
 
     onbuttonclick() {
         const SucessMsg: string = 'Thanks for voting';
         var myWindow = window.open(SucessMsg);
         myWindow.document.write(SucessMsg);
+        console.log(this.model.teamName);
+        console.log(this.model.teamName);
 
     }
     onSubmit() {
         this.submitted = true;
+    }
+    dropdownchange() {
+        let isSeleacted = false;
+        if (this.model.teamName = 'Pheonix') {
+            return isSeleacted = false;
+
+        } else if (this.model.teamName = '') {
+            return isSeleacted = true;
+        }
     }
 }

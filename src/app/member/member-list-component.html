@@ -23,9 +23,17 @@
   <div>
     <label> Select TeamMember</label>
     <select class="form-control" [(ngModel)]="model.memberName" name="memberName">
-      <option *ngFor="let bigwebName of bigwebNames" [value]="bigwebName.name">{{ bigwebName.name}}</option>
-      <!-- <option *ngFor="let mobwebName of mobwebNames">{{ mobwebName.name}}</option>
-      <option *ngFor="let fnaticName of fnaticNames">{{ fnaticName.name}}</option>  -->
+      <ng-container>
+      <option *ngFor="let bigwebName of bigwebNames" [value]="bigwebName.name">
+        <span *ngIf="model.teamName==='Pheonix'">{{ bigwebName.name}}</span>
+      </option>
+      </ng-container>
+      <option *ngFor="let mobwebName of mobwebNames">
+        <span *ngIf="model.teamName==='Dynamos'"> {{ mobwebName.name}}</span>
+      </option>
+      <option *ngFor="let fnaticName of fnaticNames">
+        <span *ngIf="model.teamName==='Fnatic'"> {{ fnaticName.name}}</span>
+      </option>
     </select>
   </div>
   <div class="form-group">
@@ -33,29 +41,29 @@
       <strong>Comment:</strong>
     </label>
     <textarea class="form-control" rows="5" id="comment" [(ngModel)]="model.comment" name="comment" required #comment="ngModel"></textarea>
-        <div *ngIf="comment.invalid" class="alert alert-danger"> 
-          Name required. 
-      </div> 
+    <div *ngIf="comment.invalid" class="alert alert-danger">
+      Name required.
+    </div>
   </div>
-   <button type="submit" class="btn btn-success">Vote</button>
+  <button type="submit" class="btn btn-success">Vote</button>
 </form>
 <div [hidden]="!submitted">
   <h2>You are going to submit the following:</h2>
   <div class="row">
-    <div class="col-xs-3">SprintNo</div>
-    <div class="col-xs-9  pull-left">{{ model.sprintNo }}</div>
+    <div class="col-xs-6">SprintNo</div>
+    <div class="col-xs-0  pull-left">{{ model.sprintNo }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">teamName</div>
-    <div class="col-xs-9 pull-left">{{ model.teamName }}</div>
+    <div class="col-xs-6">teamName</div>
+    <div class="col-xs-0 pull-left">{{ model.teamName }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">memberName</div>
-    <div class="col-xs-9 pull-left">{{ model.memberName }}</div>
+    <div class="col-xs-6">memberName</div>
+    <div class="col-xs-0 pull-left">{{ model.memberName }}</div>
   </div>
   <div class="row">
-    <div class="col-xs-3">comment</div>
-    <div class="col-xs-9 pull-left">{{ model.comment }}</div>
+    <div class="col-xs-6">comment</div>
+    <div class="col-xs-0 pull-left">{{ model.comment }}</div>
   </div>
   <br>
   <button class="btn btn-primary" (click)='onbuttonclick()'>Submit</button>
