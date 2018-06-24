@@ -33,16 +33,16 @@ export class MemberListComponent {
         { "name": 'jkl' }
     ];
     mobwebNames: any[] = [
-        { "name": 'abc' },
-        { "name": 'def' },
-        { "name": 'ghi' },
-        { "name": 'jkl' }
+        { "name": 'mno' },
+        { "name": 'pqr' },
+        { "name": 'stu' },
+        { "name": 'vwx' }
     ];
     fnaticNames: any[] = [
-        { "name": 'abc' },
-        { "name": 'def' },
-        { "name": 'ghi' },
-        { "name": 'jkl' }
+        { "name": 'yz1' },
+        { "name": '234' },
+        { "name": '567' },
+        { "name": '890' }
     ];
     teamNames: any[] = [
         { "name": 'Pheonix' },
