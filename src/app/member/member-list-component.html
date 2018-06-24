@@ -23,17 +23,21 @@
   <div>
     <label> Select TeamMember</label>
     <select class="form-control" [(ngModel)]="model.memberName" name="memberName">
-      <ng-container>
-      <option *ngFor="let bigwebName of bigwebNames" [value]="bigwebName.name">
-        <span *ngIf="model.teamName==='Pheonix'">{{ bigwebName.name}}</span>
-      </option>
+      <ng-container *ngIf="model.teamName==='Pheonix'">
+        <option *ngFor="let bigwebName of bigwebNames" [value]="bigwebName.name">
+          {{ bigwebName.name}}
+        </option>
       </ng-container>
-      <option *ngFor="let mobwebName of mobwebNames">
-        <span *ngIf="model.teamName==='Dynamos'"> {{ mobwebName.name}}</span>
-      </option>
-      <option *ngFor="let fnaticName of fnaticNames">
-        <span *ngIf="model.teamName==='Fnatic'"> {{ fnaticName.name}}</span>
-      </option>
+      <ng-container *ngIf="model.teamName==='Dynamos'">
+        <option *ngFor="let mobwebName of mobwebNames">
+          {{ mobwebName.name}}
+        </option>
+      </ng-container>
+      <ng-container *ngIf="model.teamName==='Fnatic'">
+        <option *ngFor="let fnaticName of fnaticNames">
+          {{ fnaticName.name}}
+        </option>
+      </ng-container>
     </select>
   </div>
   <div class="form-group">
